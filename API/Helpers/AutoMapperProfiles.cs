@@ -19,5 +19,9 @@ public class AutoMapperProfiles : Profile
                     (source => source.DateOfBirth.CalculateAge())
             );
         CreateMap<Photo, PhotoDto>();
+        CreateMap<MemberUpdateDto, AppUser>()
+            .ForAllMembers(options => options.Condition(
+                (source, destination, sourceMember) => (sourceMember != null))
+            );
     }
 }

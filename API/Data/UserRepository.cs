@@ -34,6 +34,11 @@ public class UserRepository : IUserRepository
             .SingleOrDefaultAsync(user => user.Username == username);
     }
 
+    public async Task<AppUser> GetUserByUsernameAsync(string username)
+    {
+        return await _context.Users.FirstOrDefaultAsync(user => user.UserName == username);
+    }
+
     public async Task<bool> SaveAllAsync()
     {
         return await _context.SaveChangesAsync() > 0;
