@@ -23,5 +23,6 @@ public class AutoMapperProfiles : Profile
             .ForAllMembers(options => options.Condition(
                 (source, destination, sourceMember) => (sourceMember != null))
             );
+        CreateMap<RegisterDto, AppUser>();
     }
 }
