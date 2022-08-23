@@ -1,0 +1,9 @@
+.form-filter,
+.filter-group {
+  display: flex;
+  align-items: center;
+}
+
+.form-filter {
+  margin-bottom: 20px;
+}
